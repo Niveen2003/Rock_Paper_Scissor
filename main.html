@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+  function fun(user){
+    const ch=['Rock','Paper','Scissor'];
+    const com=ch[Math.floor(Math.random()*ch.length)];
+    const result=document.getElementById('result');
+    document.getElementById('user').textContent=`Your Choice: ${user}`;
+    document.getElementById('com').textContent=`Computer Choice: ${com}`;
+    if(user==com){
+        document.getElementById('come').textContent='Result:It\'s a tie';
+    }
+    else if(
+        (user=='Rock'&&com=='Scissor')||
+        (user=='Scissor'&&com=='Paper')||
+        (user=='Paper'&&com=='Rock')
+    ){
+        document.getElementById('come').textContent='Result: You win!';
+    }else{
+        document.getElementById('come').textContent='Result: You lose!';
+    }
+    const color=document.getElementById('come').value
+  }
+    </script>
+    <style>
+        #c{
+    margin-left: 20%;
+    width: 80px;
+    padding: 15px;
+    background-color: rgba(217, 219, 204, 0.869);
+    border-radius: 5px;
+    color: black;
+}
+#main{
+    margin: 0;
+    height: 100vh;
+    background-image:url("https://w7.pngwing.com/pngs/478/148/png-transparent-rocku2013paperu2013scissors-game-play-painted-rock-paper-scissors-watercolor-painting-game-angle-thumbnail.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#result{
+    margin-top: 100px;
+    width: 550px;
+    height: 180px;
+    border-color: black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 35px;
+}
+#t{
+    background-color: rgb(192, 177, 158);
+    width: 550px;
+    padding: 1px;
+    border-radius: 15px;
+    box-shadow: 5px 5px  5px;
+}
+    </style>
+</head>
+<body id="main">
+   <center> <div id="t"><h1>Rock Paper Scissor</h1></div></center>
+   <br>
+   <br>
+   <button id="c" onclick="fun('Rock')">Rock</button>
+   <button id="c" onclick="fun('Paper')">Paper</button>
+   <button id="c" onclick="fun('Scissor')">Scissor</button><br>
+   <br>
+   <br>
+   <br>
+   <center>
+   <div id="result">
+    <h1  id="user">Your-Choice :</h1>
+    <h1  id="com">Computer-Choice :</h1>
+    <h1  id="come">Result :</h1>
+     <!-- <p id="user">Your-Choice :</p>
+     <p id="com">Computer-Choice :</p>
+     <p id="come">Result :</p> -->
+   </div>
+</center>
+</body>
+</html>
